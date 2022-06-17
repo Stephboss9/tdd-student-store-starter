@@ -1,0 +1,7 @@
+.view-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 800px;
+}

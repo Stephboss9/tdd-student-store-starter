@@ -47,7 +47,11 @@ let handleOnSubmit = () => {
         <main>
           {}
           <Navbar />
-          <Home products = {products} input = {input} setInput = {setInput}/>
+          <Routes>
+              <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}/>}/> 
+              <Route path= "/products/:productId" element={<ProductDetail/>}/>
+              <Route path= "*" element ={<NotFound/>}/>
+          </Routes>
           <Sidebar />
           <Footer/>
         </main>

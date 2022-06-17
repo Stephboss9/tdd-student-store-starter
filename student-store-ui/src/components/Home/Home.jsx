@@ -4,12 +4,15 @@ import "./Home.css"
 import About from "./About"
 import Contact from "./Contact"
 import Search from "./Search"
+import ProductCard from "../../components/ProductCard/ProductCard"
 import { useState } from "react"
 export default function Home(props) {
   
   const [currentProducts, setCurrentProducts] = useState([])
   const [categoryBtn, setCategoryBtn] = useState(false)
-  
+
+   
+
    let handleOnSearchChange = (event) => {
     props.setInput(event.target.value)
     setCurrentProducts(props.products.filter(product => {
@@ -20,9 +23,15 @@ export default function Home(props) {
    let handleCategory = (categoryName) => {
     setCategoryBtn(true)
     console.log(categoryName)
+    if(categoryName === "") {
+      setCurrentProducts(props.products)
+    } else {
     setCurrentProducts(props.products.filter(product => {
       return (product.category === categoryName)
     }))
+  }
+    console.log(currentProducts)
+    console.log(categoryBtn)
    }
   
 
@@ -30,8 +39,7 @@ export default function Home(props) {
     <div className="home">
       <Hero/>
       <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange} handleCategory = {handleCategory}/>
-      (<ProductGrid  categoryBtn = {categoryBtn} products = {currentProducts.length === 0?props.products:currentProducts} input = {props.input}/>)
-      {console.log(props.input)}
+      (<ProductGrid  categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false? props.products:currentProducts} input = {props.input}/>)
       <About/>
       <Contact/>
     </div>
@@ -50,32 +58,10 @@ export function ProductGrid(products) {
        products.products.map(currentProduct => {
         return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
       })
-      
      }
      
     </div>
   )
 }
 
-
-export function ProductCard(product) {
-  return (
-    <div className="product-card">
-      <div className="media">
-      <img class = "product-image" src = {product.product.image}/>
-      </div>
-        <div className = "product-info">
-            <div className="main-info">
-            <h4>{product.product.name}</h4>
-            <h4 className= "product-price">${product.product.price}</h4>
-             </div>
-          <div className = "product-actions">
-            <button className="add"><i className="material-icons">add</i></button>
-            <button className="remove"><i className="material-icons">remove</i></button>
-          </div>
-        </div>
-        
-    </div>
-  )
-}
 
