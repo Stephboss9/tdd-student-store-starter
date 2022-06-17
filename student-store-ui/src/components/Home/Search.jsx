@@ -1,13 +1,13 @@
 import React from 'react'
 import "./Search.css"
 
-export default function Search() {
+export default function Search(props) {
   return (
     <div className='search-container'>
         <div className='row'>
-     <form className = "search-bar">
-            <input className = "search-input" placeholder="...search"></input>
-            <i className = "material-icons">search</i>
+        <form className = "search-bar">
+            <input className = "search-input" placeholder="...search" onChange={props.handleOnSearchChange}></input>
+            <button className="search-btn"><i className = "material-icons">search</i></button>
         </form>
         <span className = "help"> 
         <i className="material-icons">help</i>
@@ -26,8 +26,7 @@ export default function Search() {
    
 }
 
- 
- export function Categories() {
+ export function Categories(props) {
    return (
     <div className = "row">
     <div className = "hamburger-menu">
