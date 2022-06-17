@@ -8,22 +8,29 @@ import { useState } from "react"
 export default function Home(props) {
   
   const [currentProducts, setCurrentProducts] = useState([])
+  const [categoryBtn, setCategoryBtn] = useState(false)
+  
    let handleOnSearchChange = (event) => {
-
     props.setInput(event.target.value)
-    console.log(props.products[0].name)
     setCurrentProducts(props.products.filter(product => {
       return (product.name.toLowerCase().includes(props.input.toLowerCase()))
     }))
    }
 
+   let handleCategory = (categoryName) => {
+    setCategoryBtn(true)
+    console.log(categoryName)
+    setCurrentProducts(props.products.filter(product => {
+      return (product.category === categoryName)
+    }))
+   }
   
 
   return (
     <div className="home">
       <Hero/>
-      <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange}/>
-      (<ProductGrid products = {props.products} currentProducts = {currentProducts} input = {props.input}/>)
+      <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange} handleCategory = {handleCategory}/>
+      (<ProductGrid  categoryBtn = {categoryBtn} products = {currentProducts.length === 0?props.products:currentProducts} input = {props.input}/>)
       {console.log(props.input)}
       <About/>
       <Contact/>
@@ -40,13 +47,10 @@ export function ProductGrid(products) {
   return (
     <div className="product-grid">
      {
-      products.input.length === 0?
-      products.products.map(currentProduct => {
-        return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
-      }): 
-      products.currentProducts.map(currentProduct => {
+       products.products.map(currentProduct => {
         return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
       })
+      
      }
      
     </div>
