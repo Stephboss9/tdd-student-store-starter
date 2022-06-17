@@ -29,10 +29,8 @@ export default function App() {
 
   useEffect(() => {
     axios.get('https://codepath-store-api.herokuapp.com/store').then(response => {
-      console.log(response.data.products)
       setProducts(response.data.products)
-      console.log(products[0] + "in App.jsx")
-
+      setFetching(true)
     }).catch (error => {
       setError("There was an error getting the data")
       setFetching(false)
@@ -45,16 +43,9 @@ export default function App() {
         <main>
           {}
           <Navbar />
-          {}
           <Home products = {products}/>
           <Sidebar />
           <Footer/>
-          <Routes>
-              <Route path ="/products/:productId" element = {<ProductDetail/>}/>
-              <Route path ="*" element = {<NotFound/>}/>
-              <Route  path="/" element = {<Home/>}/>
-              <Route path = "/ShoppingCart" element={<ShoppingCart/>}/>
-          </Routes>
         </main>
       </BrowserRouter>
     </div>

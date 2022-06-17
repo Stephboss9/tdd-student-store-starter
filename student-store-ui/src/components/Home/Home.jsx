@@ -20,7 +20,6 @@ export default function Home(props) {
             </div>
            
       </div>
-
       <div className = "row">
         <div className = "hamburger-menu">
             <i className="materials-icon">menu</i>
@@ -31,8 +30,8 @@ export default function Home(props) {
         <button className = "menu-item"> Clothing</button>
         <button className = "menu-item"> Clothing</button>
       </div>
-      {console.log(props.products)}
-      <ProductGrid products = {props.products}/>
+      {console.log(props.products[4])}
+      (<ProductGrid products = {props.products}/>)
     </div>
   )
 } 
@@ -48,8 +47,9 @@ export function ProductGrid(products) {
 */
   return (
     <div className="product-grid">
-     
-
+     {products.products.map(currentProduct => {
+        return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
+      })}
     </div>
   )
 }
@@ -58,6 +58,9 @@ export function ProductGrid(products) {
 export function ProductCard(product) {
   return (
     <div className="product-card">
+      {console.log(product.product)}
+        <h4>{product.product.name}</h4>
+        <img class = "product-image" src = {product.product.image}/>
     </div>
   )
 }
