@@ -24,8 +24,12 @@ export default function App() {
  const [error, setError] = useState("No Error")
  const [isOpen, setOpen] = useState(false)
  const [shoppingCart, setShoppingCart] = useState([])
+ const [input, setInput] = useState("")
 // const [CheckoutForm, setCheckoutForm] = 
 
+let handleOnSubmit = () => {
+  props.setInput
+ }
 
   useEffect(() => {
     axios.get('https://codepath-store-api.herokuapp.com/store').then(response => {
@@ -43,7 +47,7 @@ export default function App() {
         <main>
           {}
           <Navbar />
-          <Home products = {products}/>
+          <Home products = {products} input = {input} setInput = {setInput}/>
           <Sidebar />
           <Footer/>
         </main>

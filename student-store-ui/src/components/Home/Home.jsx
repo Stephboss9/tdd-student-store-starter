@@ -4,21 +4,32 @@ import "./Home.css"
 import About from "./About"
 import Contact from "./Contact"
 import Search from "./Search"
+import { useState } from "react"
 export default function Home(props) {
+  
+  const [currentProducts, setCurrentProducts] = useState([])
+   let handleOnSearchChange = (event) => {
+
+    props.setInput(event.target.value)
+    console.log(props.products[0].name)
+    setCurrentProducts(props.products.filter(product => {
+      return (product.name.toLowerCase().includes(props.input.toLowerCase()))
+    }))
+   }
+
+  
+
   return (
     <div className="home">
       <Hero/>
-      <Search/>
-      (<ProductGrid products = {props.products}/>)
+      <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange}/>
+      (<ProductGrid products = {props.products} currentProducts = {currentProducts} input = {props.input}/>)
+      {console.log(props.input)}
       <About/>
-
       <Contact/>
     </div>
   )
 } 
-
-
-
 
 export function ProductGrid(products) {
 /*
@@ -28,9 +39,16 @@ export function ProductGrid(products) {
 */
   return (
     <div className="product-grid">
-     {products.products.map(currentProduct => {
+     {
+      products.input.length === 0?
+      products.products.map(currentProduct => {
         return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
-      })}
+      }): 
+      products.currentProducts.map(currentProduct => {
+        return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
+      })
+     }
+     
     </div>
   )
 }
