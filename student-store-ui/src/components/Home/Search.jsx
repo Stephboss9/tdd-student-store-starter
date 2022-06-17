@@ -18,7 +18,7 @@ export default function Search(props) {
         </div> 
         </div>
         
-        <Categories/>
+        <Categories setInput = {props.setInput} handleCategory = {props.handleCategory}/>
           
     </div>
     
@@ -32,11 +32,11 @@ export default function Search(props) {
     <div className = "hamburger-menu">
         <i className="material-icons">menu</i>
     </div>
-    <h3 className = "search"> All Categories</h3>
-    <button className = "menu-item"> Clothing</button>
-    <button className = "menu-item"> Clothing</button>
-    <button className = "menu-item"> Clothing</button>
-    <button className = "menu-item"> Clothing</button>
+    <button onClick = {()=> props.handleCategory("")} className = "menu-item"> All Categories</button>
+    <button onClick = {()=> props.handleCategory("clothing")} className = "menu-item"> Clothing</button>
+    <button onClick = {()=> props.handleCategory("food")} className = "menu-item"> Food</button>
+    <button onClick = {()=> props.handleCategory("accessories")} className = "menu-item"> Accessories</button>
+    <button onClick = {()=> props.handleCategory("tech")} className = "menu-item"> Tech</button>
   </div>
    )
  }
