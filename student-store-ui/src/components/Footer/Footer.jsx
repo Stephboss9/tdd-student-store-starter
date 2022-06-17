@@ -1,7 +1,7 @@
 import * as React from "react"
 import play_icon from "../../../Images/play_store_icon.svg"
 import app_icon from "../../../Images/app_store_icon.svg"
-
+import "./Footer.css"
 
 export default function Footer() {
   return (
@@ -30,7 +30,7 @@ export default function Footer() {
        </div>
      
         <div className="footer-column">
-        <ul className="footer-column">
+        <ul >
             <li>Support</li>
             <li>Contact Us</li>
             <li>Mony Refund</li>
@@ -39,7 +39,9 @@ export default function Footer() {
             <li>Open Dispute</li>
             </ul>
         </div>
-        <ul className="footer-column">
+
+        <div className="footer-column">
+        <ul >
              <li>Account</li>
             <li>Login</li>
             <li>Register</li>
@@ -47,7 +49,10 @@ export default function Footer() {
             <li>My Orders</li>
             <li></li>
         </ul>
-        <ul className="footer-column">
+        </div>
+       
+        <div className="footer-column">
+        <ul >
             <li>Socials</li>
             <li>Facebook</li>
             <li>Twitter</li>
@@ -55,7 +60,10 @@ export default function Footer() {
             <li>Instagram</li>
             <li>Youtube</li>
         </ul>
-        <ul className="footer-column">
+        </div>
+
+        <div className="footer-column">
+        <ul>
             <li>Our App</li>
             <li><img src={app_icon}/></li>
             <li><img src = {play_icon}/></li>
@@ -63,6 +71,7 @@ export default function Footer() {
             <li></li>
             <li></li>
         </ul>
+        </div>
         </div>
     </div>
   )

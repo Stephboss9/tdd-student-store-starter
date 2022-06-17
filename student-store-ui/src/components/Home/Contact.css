@@ -1,0 +1,27 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    color: white;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-evenly;
+    background: var(--dark-blue
+    );
+    width: 100%;
+    margin: 0 auto;
+    height: 330px;
+}
+
+.contact-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.happy-img {
+    height: 330px;
+    transform: translateY(-2px);
+}
+

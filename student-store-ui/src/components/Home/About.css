@@ -1,0 +1,30 @@
+.about-section {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--content-width);
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.about-main {
+    display: flex;
+    height: 330px;
+    background-color: var(--pure-white);
+    border: 1px solid rgb(172, 172, 172);
+}
+
+.image-container {
+    height: 329px;
+    background: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    width: 400px
+    ;
+}
+
+.about-info {
+}
+.codepath-image {
+    width: 100%;
+}
