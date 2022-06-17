@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: center;    
+    background: var(--dark-blue);
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+   
+}
+
+.logo-img {
+    height: 70px;
+    width: 70px;
+
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    flex: 0 1 10%;
+}
+
