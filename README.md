@@ -278,3 +278,19 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+
+Reflection
+Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+Yes, both the twitter lab and the food fued lab helped me get practice with using different event handlers like onChange, onClick, and onBur which I implemented in this weeks project. Getting familiar with the concept of prop drilling in the twitter lab helped a lot for this weeks project.
+
+If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+If I had more time, I would have made my website look more professional using CSS, and made it more original and unique rather than looking very similiar to the example provided on the course portal. I would have implemented a side bar, as well as a shopping cart area. Overall just improve the UI. 
+
+Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+Everything went well during my demo, I was able to demonstrate all the core features with my website for this week. I was really inspired by Amantina's and Kians websites, they were original and unique. They had aesthetically UI's and used nice gradients.
+
+Open-source libraries used
+Add any links to open-source libraries used in your project.
+Shout out
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to James, he helped me a lot during this week with the project. Specefically, he helped me implement the product detail page for each item as well as understanding React Router v6 and using that. 
