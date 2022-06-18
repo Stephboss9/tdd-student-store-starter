@@ -15,6 +15,7 @@ export default function Home(props) {
 
    let handleOnSearchChange = (event) => {
     props.setInput(event.target.value)
+    
     setCurrentProducts(props.products.filter(product => {
       return (product.name.toLowerCase().includes(props.input.toLowerCase()))
     }))
@@ -47,11 +48,7 @@ export default function Home(props) {
 } 
 
 export function ProductGrid(products) {
-/*
- {products.map(currentProduct => {
-        <ProductCard product = {currentProduct}/>
-      })}
-*/
+
   return (
     <div className="product-grid">
      {

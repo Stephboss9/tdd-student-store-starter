@@ -35,7 +35,7 @@ export function ProductView(props) {
   return (
     <div className='product-view'>
         <div className = "view-info">
-        <ProductCard product = {props.product}/>
+        <ProductCard product = {props.product} showDescription = {true}/>
         </div>
         
     </div>

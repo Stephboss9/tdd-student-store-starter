@@ -5,7 +5,7 @@ import "./About.css"
 export default function About() {
   return (
    <div className='about-section'> 
-       <h4 className='about-intro'>About Us</h4>
+       <h1 className='about-intro'>About Us</h1>
         <div className='about-main'>
             <div className='about-info'>
                 <p className='about-description'>The codepath student store offers great products at great prices from a great team and for a great cause.

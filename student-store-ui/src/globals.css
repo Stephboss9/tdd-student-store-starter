@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 :root {
   --side-padding: 40px;
@@ -15,7 +16,6 @@
   --star-color-filled: #e5a800;
   --star-color-empty: #cbd4e6;
 }
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
   margin: 0;

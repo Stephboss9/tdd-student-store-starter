@@ -35,7 +35,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    flex-wrap: wrap;
+    width: 200px;
+
  }
 
  .nav-links

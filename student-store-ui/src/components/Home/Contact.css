@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    color: white;
 }
 
 .contact-section {
+    color: white;
+
     display: flex;
     justify-content: space-evenly;
     background: var(--dark-blue

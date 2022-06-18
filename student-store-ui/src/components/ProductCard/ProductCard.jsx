@@ -18,8 +18,9 @@ export default function ProductCard(product) {
 
             <div className = "product-info">
                 <div className="main-info">
-                <h4>{product.product.name}</h4>
+                <h4 className>{product.product.name}</h4>
                 <h4 className= "product-price">${product.product.price}</h4>
+                <p className='product-description'>{product.showDescription?product.product.description:null}</p>
                  </div>
               <div className = "product-actions">
                 <button className="add"><i className="material-icons">add</i></button>
