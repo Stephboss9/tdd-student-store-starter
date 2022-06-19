@@ -21,9 +21,6 @@ export default function Contact() {
                         <span className=' address'>Address:</span>
                         <span>123 Fake Street, San Francisco, CA</span>
                         </li>
-                    <li className='contact-piece'>
-                        <span>Socials:</span>
-                        </li>
                 </ul>
             </div>
             <div className='contact-image'><img className='happy-img' src={happy_person}></img></div>

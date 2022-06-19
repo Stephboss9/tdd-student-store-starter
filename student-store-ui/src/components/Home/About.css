@@ -3,7 +3,6 @@
     flex-direction: column;
     margin: 0 auto;
     font-family: 'Ubuntu', sans-serif;
-
     max-width: 1400px;
 }
 .about-intro {
@@ -20,7 +19,7 @@
     padding: 25px 20px;
     font-size: 1.3em;
     font-weight: 500 ;
-    color: #333;
+    color: rgb(114, 114, 114);
     margin: 0 auto;
 }
 

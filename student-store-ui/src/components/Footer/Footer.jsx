@@ -8,63 +8,63 @@ export default function Footer() {
     <div className="footer">
         <div className= "top">
             <div className = "footer-column">
-            <h4>Categories</h4>
             <ul>
-            <li>All Categories</li>
-            <li>Clothing</li>
-            <li>Food</li>
-            <li>Accessories</li>
-            <li>Tech</li>
+            <h4 className="footer-header">Categories</h4>
+            <li className = "list-item">All Categories</li>
+            <li className = "list-item">Clothing</li>
+            <li className = "list-item">Food</li>
+            <li className = "list-item">Accessories</li>
+            <li className = "list-item">Tech</li>
                 </ul>
             </div>
        
        <div className="footer-column">
         <ul>
-            <li>Company</li>
-            <li>About Us</li>
-            <li>Find a Store</li>
-            <li>Terms</li>
-            <li>Sitemap</li>
-            <li>Careers</li>
+            <h4 className="footer-header">Company</h4>
+            <li className = "list-item">About Us</li>
+            <li className = "list-item">Find a Store</li>
+            <li className = "list-item">Terms</li>
+            <li className = "list-item">Sitemap</li>
+            <li className = "list-item">Careers</li>
             </ul>
        </div>
      
         <div className="footer-column">
         <ul >
-            <li>Support</li>
-            <li>Contact Us</li>
-            <li>Mony Refund</li>
-            <li>Order Status</li>
-            <li>Shipping Info</li>
-            <li>Open Dispute</li>
+            <h4 className="footer-header">Support</h4>
+            <li className = "list-item">Contact Us</li>
+            <li className = "list-item">Mony Refund</li>
+            <li className = "list-item">Order Status</li>
+            <li className = "list-item">Shipping Info</li>
+            <li className = "list-item">Open Dispute</li>
             </ul>
         </div>
 
         <div className="footer-column">
         <ul >
-             <li>Account</li>
-            <li>Login</li>
-            <li>Register</li>
-            <li>Account Setting</li>
-            <li>My Orders</li>
-            <li></li>
+             <h4 className="footer-header">Account</h4>
+            <li className = "list-item">Login</li>
+            <li className = "list-item">Register</li>
+            <li className = "list-item">Account Setting</li>
+            <li className = "list-item">My Orders</li>
+            <li className = "list-item"></li>
         </ul>
         </div>
        
         <div className="footer-column">
         <ul >
-            <li>Socials</li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Linkedin</li>
-            <li>Instagram</li>
-            <li>Youtube</li>
+            <h4 className="footer-header">Socials</h4>
+            <li className = "list-item">Facebook</li>
+            <li className = "list-item">Twitter</li>
+            <li className = "list-item">Linkedin</li>
+            <li className = "list-item">Instagram</li>
+            <li className = "list-item">Youtube</li>
         </ul>
         </div>
 
         <div className="footer-column">
         <ul>
-            <li>Our App</li>
+            <h4 className="footer-header">Our App</h4>
             <li><img src={app_icon}/></li>
             <li><img src = {play_icon}/></li>
             <li></li>

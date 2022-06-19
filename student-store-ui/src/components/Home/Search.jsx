@@ -13,7 +13,8 @@ export default function Search(props) {
         <i className="material-icons">help</i>
         </span>
         <span className= "shopping-cart">
-            <i className="material-icons cart">shopping_cart </i>
+            <i className="material-icons cart">shopping_cart</i>
+            
         </span> 
         </div>
         
