@@ -8,17 +8,17 @@ export default function Contact() {
         <h1 className='contact-header'>Contact Us</h1>
         <div className='contact-section'>
             <div className='contact-info'>
-                <ul>
-                    <li className='contact-piece'>
-                        <span>Email:</span>
+                <ul className='contact-list'>
+                    <li className='contact-piece '>
+                        <span className=' email'>Email:</span>
                         <span>code@path.org</span>
                          </li>
                     <li className='contact-piece'>
-                        <span>Phone:</span>
+                        <span className='phone'>Phone:</span>
                         <span>1-800-CODEPATH</span>
                         </li>
                     <li className='contact-piece'>
-                        <span>Address:</span>
+                        <span className=' address'>Address:</span>
                         <span>123 Fake Street, San Francisco, CA</span>
                         </li>
                     <li className='contact-piece'>

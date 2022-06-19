@@ -1,28 +1,47 @@
 .about-section {
     display: flex;
     flex-direction: column;
-    max-width: var(--content-width);
-    width: 100%;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
 
+    max-width: 1400px;
+}
+.about-intro {
+    color: #333;
+    font-weight: 600;
+}
+.about-info {
+    flex: 0 1 50%;
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.about-description {
+    padding: 25px 20px;
+    font-size: 1.3em;
+    font-weight: 500 ;
+    color: #333;
     margin: 0 auto;
 }
 
 .about-main {
     display: flex;
-    height: 330px;
+    align-items: center;
+    width: 100%;
+    height: 400px;
     background-color: var(--pure-white);
     border: 1px solid rgb(172, 172, 172);
 }
 
 .image-container {
-    height: 329px;
     background: var(--dark-blue);
-    display: flex;
-    justify-content: center;
-    width: 400px
-    ;
+    flex: 0 1 50%;
+    align-self: center;
+    height: 400px;
 }
 
 .codepath-image {
     width: 100%;
+    height:400px;
+
 }

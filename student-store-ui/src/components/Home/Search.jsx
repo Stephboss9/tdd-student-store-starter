@@ -7,14 +7,14 @@ export default function Search(props) {
         <div className='row'>
         <form className = "search-bar">
             <input className = "search-input" placeholder="...search" onChange={props.handleOnSearchChange}></input>
-            <button className="search-btn"><i className = "material-icons">search</i></button>
+            <button className="search-btn"><i className = "material-icons search-icon">search</i></button>
         </form>
         <span className = "help"> 
         <i className="material-icons">help</i>
         </span>
-        <div className= "shopping-cart">
-            <i className="material-icons">shopping_cart </i>
-        </div> 
+        <span className= "shopping-cart">
+            <i className="material-icons cart">shopping_cart </i>
+        </span> 
         </div>
         
         <Categories setInput = {props.setInput} handleCategory = {props.handleCategory}/>
@@ -31,11 +31,13 @@ export default function Search(props) {
     <div className = "hamburger-menu">
         <i className="material-icons">menu</i>
     </div>
+    
     <button onClick = {()=> props.handleCategory("")} className = "menu-item active"> All Categories</button>
     <button onClick = {()=> props.handleCategory("clothing")} className = "menu-item"> Clothing</button>
     <button onClick = {()=> props.handleCategory("food")} className = "menu-item"> Food</button>
     <button onClick = {()=> props.handleCategory("accessories")} className = "menu-item"> Accessories</button>
     <button onClick = {()=> props.handleCategory("tech")} className = "menu-item"> Tech</button>
+    
   </div>
    )
  }

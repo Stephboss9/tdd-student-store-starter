@@ -49,20 +49,31 @@
     margin-right: 50px;
   }
 
-  .help, .shopping-cart, .search-bar {
-    flex: 0 1 16%;
+  .search-bar {
+    flex: 0 1 25%;
+  }
+
+  .search-icon {
+    color: white;
+  }
+
+ .help {
+    flex: 0 1 10%;
+  }
+
+ 
+
+  .hamburger-menu {
+    margin-right: 26px;
   }
   
   .menu-item {
     background: transparent;
-    border: none;
-    color: rgb(111, 109, 109);
+    border: transparent;
     cursor: pointer;
-    border-radius: 20px;
     padding: 20px 40px;
     font-size: 20px;
-    flex: 0 1 10%;
-    transition: transform 350ms;
+    flex: 0 1 11%;
   }
 
   
@@ -70,7 +81,18 @@
     border-radius: 0px;
     border-bottom: 2px solid rgb(11, 181, 113);
     border-bottom-color:rgb(11, 181, 113) ;
-    transform: scale(1.1);
+  }
+
+  .shopping-cart {
+    padding: 20px 20px;
+   
+  }
+  .cart {
+   background-image: linear-gradient( 320deg, var(--dark-blue) 1%, #49e783 100%);
+   padding: 15px 50px;
+   border: 2px solid var(--pure-white);
+   border-radius: 20px;
+   color: var(--pure-white);
   }
 
   

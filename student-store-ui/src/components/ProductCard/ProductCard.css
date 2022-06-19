@@ -3,16 +3,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: var(--pure-white);
+    border-radius: 20px;
     height: 375px;
     width: 250px;
     margin-bottom: 10px;
-    border: solid 1px var(--border-color);
+    border: solid 2px var(--border-color);
     margin-top :30px;
   }
   
   .product-image {
-    height: 250px;
+    height: 270px;
     width: 100%;
+    
   }
   
   .product-main-info {
@@ -22,6 +25,7 @@
   .product-info {
     display: flex;
     justify-content: space-between;
+    padding: 20px 20px;
   }
   .product-actions button {
     background: var(--pure-white);
