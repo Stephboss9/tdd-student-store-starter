@@ -11,6 +11,7 @@ import "./ProductCard.css"
 export default function ProductCard(product) {
     return (
         <div className="product-card">
+          
          <Link to = {`/products/${product.product.id}`}> <div className="media">
           <img class = "product-image" src = {product.product.image}/>
           </div>
