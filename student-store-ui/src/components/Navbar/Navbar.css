@@ -1,10 +1,12 @@
 .navbar {
     display: flex;
     justify-content: space-evenly;    
-    background: var(--dark-blue);
+    background: var(--pure-white);
     width: 100%;
     flex-wrap: wrap;
     align-items: center;
+    border: 2px solid var(--border-color);
+    font-family: 'Ubuntu', sans-serif;
 }
 .logo {
     align-self: center;
@@ -14,6 +16,7 @@
 .logo-img {
     height: 70px;
     width: 70px;
+    background: transparent;
 }
 
 .icon {
@@ -28,8 +31,11 @@
 }
 .link{
     text-decoration: none;
-    color: white;
+    background: linear-gradient( 30deg, #49849a , #4ecf68 100%);
     flex: 0 1 10%;
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    font-weight: 500;
 }
 
 .socials

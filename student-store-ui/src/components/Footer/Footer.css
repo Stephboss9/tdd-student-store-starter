@@ -5,10 +5,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--pure-white);
     font-size: 1.3em;
     font-weight: 300;
     background-image: linear-gradient( 320deg, #49849a , #4ecf68 100%);
+    border: 2px solid var(--border-color);
     font-family: 'Ubuntu', sans-serif;
     }
     
@@ -27,11 +27,12 @@
         justify-content: space-between;
         max-width: 1400px;
         margin: 0 auto;
+        color: var(--pure-white);
     
     }
 
     .list-item {
-        margin-top: 10px;
+        margin-top: 12px;
     }
     
     .footer-column {

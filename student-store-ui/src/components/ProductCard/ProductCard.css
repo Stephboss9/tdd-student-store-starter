@@ -31,6 +31,9 @@
     background: var(--pure-white);
     border: var(--pure-white);
   }
+  .product-image {
+    border-radius: 20px;
+  }
   
   .product-actions button i{
     cursor: pointer;

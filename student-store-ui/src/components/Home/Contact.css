@@ -8,15 +8,15 @@
 
 }
 .contact-header {
-    color: #333;
+    color: rgb(103, 103, 103);
     font-weight: 600;
 }
 .contact-section {
-    color: white;
-
+    color: rgb(114, 114, 114);
+    border: 2px solid var(--border-color);
     display: flex;
     justify-content: space-evenly;
-    background: var(--dark-blue
+    background: var(--pure-white
     );
     width: 100%;
     height: 400px;
