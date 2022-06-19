@@ -3,7 +3,6 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
-
 import Footer from "../Footer/Footer"
 import NotFound from "../NotFound/NotFound"
 import { useState } from "react"

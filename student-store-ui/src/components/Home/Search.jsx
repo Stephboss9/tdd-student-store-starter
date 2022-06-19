@@ -13,7 +13,6 @@ export default function Search(props) {
         <i className="material-icons">help</i>
         </span>
         <div className= "shopping-cart">
-            My Cart
             <i className="material-icons">shopping_cart </i>
         </div> 
         </div>
@@ -32,7 +31,7 @@ export default function Search(props) {
     <div className = "hamburger-menu">
         <i className="material-icons">menu</i>
     </div>
-    <button onClick = {()=> props.handleCategory("")} className = "menu-item"> All Categories</button>
+    <button onClick = {()=> props.handleCategory("")} className = "menu-item active"> All Categories</button>
     <button onClick = {()=> props.handleCategory("clothing")} className = "menu-item"> Clothing</button>
     <button onClick = {()=> props.handleCategory("food")} className = "menu-item"> Food</button>
     <button onClick = {()=> props.handleCategory("accessories")} className = "menu-item"> Accessories</button>

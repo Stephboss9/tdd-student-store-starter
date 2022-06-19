@@ -10,8 +10,8 @@ import fb_icon from "../../../Images/facebook_icon.png"
 export default function Navbar() {
   return (
     <nav className="navbar">
-    <Link className  to ="/"><Logo /></Link> 
-    <div className="socials link">
+   <div className="logo"><Logo /></div> 
+    <div className="socials">
     <Link  to ="/"><img className ="icon" src = {twitter_icon}/></Link> 
     <Link  to ="/"><img className = "icon ig" src = {ig_icon}/></Link> 
     <Link  to ="/"><img className = "icon" src = {fb_icon}/></Link> 
@@ -29,7 +29,7 @@ export default function Navbar() {
 
 export function Logo() {
   return (
-    <div className="logo"><img src = {companyLogo} className = "logo-img"/></div>
+    <Link className  to ="/"><img src = {companyLogo} className = "logo-img"/></Link>
   )
 }
 
