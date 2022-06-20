@@ -21,14 +21,10 @@ export default function App() {
  const [products, setProducts] = useState([])
  const [isFetching, setFetching] = useState(false)
  const [error, setError] = useState("No Error")
- const [isOpen, setOpen] = useState(false)
+ const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
  const [shoppingCart, setShoppingCart] = useState([])
  const [input, setInput] = useState("")
 // const [CheckoutForm, setCheckoutForm] = 
-
-let handleOnSubmit = () => {
-  props.setInput
- }
 
   useEffect(() => {
     axios.get('https://codepath-store-api.herokuapp.com/store').then(response => {
@@ -40,13 +36,28 @@ let handleOnSubmit = () => {
   });}
  , [])
 
+ //Toggles the sidebar
+ let handleOnToggle = ()=> {
+    let sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("open")
+    if(isOpen){
+      setOpen(false)
+    }
+    else {
+      setOpen(true)
+    }
+
+ }
+
+
+
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {}
           <Navbar />
-          <Sidebar />
+          <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}/>
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}/>}/> 
               <Route path= "/products/:productId" element={<ProductDetail/>}/>

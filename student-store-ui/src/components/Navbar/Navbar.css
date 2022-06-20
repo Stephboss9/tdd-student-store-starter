@@ -31,10 +31,9 @@
 }
 .link{
     text-decoration: none;
-    background: linear-gradient( 30deg, #49849a , #4ecf68 100%);
+    color: rgb(103, 103, 103);
     flex: 0 1 10%;
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    
     font-weight: 500;
 }
 

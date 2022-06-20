@@ -1,0 +1,74 @@
+.cart-table-container {
+    color: var(--pure-white);
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.cart-table-headers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid var(--border-color);
+}
+.cart-table-header {
+    padding: 0px 30px;
+    font-weight: 600;
+}
+
+.cart-table-item-rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.item-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.item-row h4 {
+    flex: 0 1 8%;
+}
+
+.cart-product-name {
+    margin-left: 22px;
+}
+.cart-product-total {
+    margin-right: 20px;
+}
+
+.receipt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.subtotal, .total-price, .subtotal-header, .total-price-header {
+    padding: 5px 35px;
+
+}
+
+
+.subtotal-container, .total-price-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
