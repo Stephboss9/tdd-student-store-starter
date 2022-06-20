@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
-import companyLogo from "../../../Images/CodePath_Logo.webp"
+import companyLogo from "../../../Images/codepath-transparent.png"
 import "./Navbar.css"
 import twitter_icon from "../../../Images/twitter_icon.png"
 import ig_icon from "../../../Images/ig_icon.png"

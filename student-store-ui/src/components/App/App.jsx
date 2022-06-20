@@ -46,12 +46,12 @@ let handleOnSubmit = () => {
         <main>
           {}
           <Navbar />
+          <Sidebar />
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}/>}/> 
               <Route path= "/products/:productId" element={<ProductDetail/>}/>
               <Route path= "*" element ={<NotFound/>}/>
           </Routes>
-          <Sidebar />
           <Footer/>
         </main>
       </BrowserRouter>
