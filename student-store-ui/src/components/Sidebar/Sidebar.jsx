@@ -6,7 +6,6 @@ import "../ShoppingCart/ShoppingCart.css"
 export default function Sidebar(props) {
 
 
-
   return (
     <section className="sidebar closed">
         <div className = "wrapper">
@@ -26,13 +25,34 @@ export default function Sidebar(props) {
 
 
 export function ShoppingCart(props) {
+  let getSubTotal = () => {
+    let subTotal = 0
+    props.shoppingCart.map(current => {
+      subTotal += (props.products.find((item) => {
+        return (item.id == current.id)  
+      }).price*current.quantity)
+    })
+    return subTotal
+  }
+
+  let getTotalTax = () => {
+    let tax = (getSubTotal() * .0875)
+    return tax
+  }
+
+  let getTotalCost = ()=> {
+    let subTotal = getSubTotal()
+    let total = subTotal + (subTotal*.0875) 
+    return (total)
+  }
+
   return (
     <div className="shopping-cart hidden">
       <div className="shopping-intro">
         <h4 className="shopping-cart-header">Shopping Cart</h4>
         <button className="cart-icon open"><i className="material-icons md-48 open">add_shopping_cart</i></button>
       </div>
-        {props.shoppingCart.length === 0? <h4 className="no-items">No items added to shopping cart yet. Start shopping now!</h4>:null}
+        {props.shoppingCart.length === 0? <h4 className="no-items">No items added to shopping cart yet. Start shopping now!</h4>:
         <div className="cart-table-container">
           <div className="cart-table">
             <div className="cart-table-headers">
@@ -48,27 +68,31 @@ export function ShoppingCart(props) {
                    return (item.id == product.id)  
                  }).name}</h4>
                  <h4 className="cart-product-quantity">{product.quantity}</h4>
-                 <h4 className="cart-product-price">{props.products.find((item) => {
+                 <h4 className="cart-product-price">${props.products.find((item) => {
                    return (item.id == product.id)  
                  }).price}</h4>
-                 <h4 className="cart-product-total">{props.products.find((item) => {
+                 <h4 className="cart-product-total">${(props.products.find((item) => {
                    return (item.id == product.id)  
-                 }).price * product.quantity}</h4>
+                 }).price*product.quantity).toFixed(2)}</h4>
                </div>)
               })}
             </div>
             <div className="receipt">
                 <div className="subtotal-container">
                   <span className="subtotal-header">Subtotal</span>
-                  <span className="subtotal">$500</span>
+                  <span className="subtotal">${getSubTotal().toFixed(2)}</span>
                 </div> 
+                <div className="total-tax-container">
+                  <span className="total-tax-header">Tax</span>
+                <span className="total-tax">${getTotalTax().toFixed(2)}</span>
+                </div>
                 <div className="total-price-container">
                   <span className="total-price-header">Total</span>
-                <span className="total-price">$500</span>
+                <span className="total-price">${getTotalCost().toFixed(2)}</span>
                 </div>
               </div>
           </div>
-        </div>
+        </div>}
         <div className="payment">
           <h4>Payment Info</h4>
           <button className="cart-icon open"><i className="material-icons md-48 open">monetization_on</i></button>

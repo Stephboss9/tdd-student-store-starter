@@ -60,13 +60,13 @@
     border-bottom: 1px solid var(--border-color);
 }
 
-.subtotal, .total-price, .subtotal-header, .total-price-header {
+.subtotal, .total-price, .subtotal-header, .total-price-header, .total-tax-header, .total-tax {
     padding: 5px 35px;
 
 }
 
 
-.subtotal-container, .total-price-container {
+.subtotal-container, .total-price-container, .total-tax-container {
     display: flex;
     width: 100%;
     flex-direction: row;

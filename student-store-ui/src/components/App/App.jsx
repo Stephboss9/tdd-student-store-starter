@@ -85,7 +85,8 @@ let handleRemoveItemToCart  = (productId) => {
           <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}/>
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
-              handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart}/>}/> 
+              handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 
+              shoppingCart = {shoppingCart}/>}/> 
               <Route path= "/products/:productId" element={<ProductDetail/>}/>
               <Route path= "*" element ={<NotFound/>}/>
           </Routes>

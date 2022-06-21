@@ -28,7 +28,7 @@ export default function ProductCard(props) {
                 <button className="remove" onClick={()=> props.handleRemoveItemToCart(props.product.id)}><i className="material-icons">remove</i></button>
               </div>
             </div>
-            
+            <span className="product-quantity">{console.log(props.quantity)}</span>
         </div>
       )
     }

@@ -34,14 +34,15 @@ export default function Home(props) {
     console.log(currentProducts)
     console.log(categoryBtn)
    }
-  
+
+
 
   return (
     <div className="home">
       <Hero/>
       <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange} handleCategory = {handleCategory}/>
       (<ProductGrid  handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false?
-         props.products:currentProducts} input = {props.input}/>)
+         props.products:currentProducts} input = {props.input} />)
       <About/>
       <Contact/>
     </div>
@@ -49,6 +50,7 @@ export default function Home(props) {
 } 
 
 export function ProductGrid(props) {
+ 
 
   return (
     <div className="product-grid">
