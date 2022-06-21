@@ -1,0 +1,50 @@
+.form-wrapper {
+border: 1px solid var(--pure-white);
+background: rgb(247, 247, 247);
+border-radius: 20px;
+}
+
+.checkout-form, .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 95%;
+    color: rgb(103, 103, 103);
+    height: 250px;
+
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.checkout-title {
+    font-size: 25px;
+}
+
+.input-1-header, .input-2-header {
+    font-size: 20px;
+}
+
+.checkout-form-input {
+    padding: 15px 50px;
+    border: 2px solid rgb(12, 255, 154);
+    border-radius: 15px;
+}
+.checkout-button {
+    border: 1px solid var(--pure-white);
+    border-radius: 20px;
+    margin-top: 10px;
+    background: linear-gradient( 320deg, #eea424, var(--pure-white));
+    margin-bottom: 5px;
+}
+.checkout {
+    width: 40%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
