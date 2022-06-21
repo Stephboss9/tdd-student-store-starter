@@ -46,8 +46,33 @@ export default function App() {
     else {
       setOpen(true)
     }
-
  }
+
+ let handleAddItemToCart = (productId) => {
+      let newProd = {id: productId, quantity:1}
+      let cartCopy = shoppingCart.filter(current => { if (current.id === productId){
+          newProd.quantity = current.quantity + 1;
+          return false;
+        } else {return true;}
+      }
+    )  
+    cartCopy.push(newProd)
+      setShoppingCart(cartCopy)
+}
+
+let handleRemoveItemToCart  = (productId) => {
+  let newProd = {id: productId, quantity:1}
+      let cartCopy = shoppingCart.filter(current => { if (current.id === productId){
+          newProd.quantity = current.quantity - 1;
+          return false;
+        } else {return true;}
+      }
+    )  
+      if(newProd.quantity != 0){cartCopy.push(newProd)}
+      setShoppingCart(cartCopy)
+}
+
+ 
 
 
 
@@ -59,7 +84,8 @@ export default function App() {
           <Navbar />
           <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}/>
           <Routes>
-              <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}/>}/> 
+              <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
+              handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart}/>}/> 
               <Route path= "/products/:productId" element={<ProductDetail/>}/>
               <Route path= "*" element ={<NotFound/>}/>
           </Routes>

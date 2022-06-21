@@ -29,7 +29,7 @@ export default function Navbar() {
 
 export function Logo() {
   return (
-    <Link className  to ="/"><img src = {companyLogo} className = "logo-img"/></Link>
+    <Link to ="/"><img src = {companyLogo} className = "logo-img"/></Link>
   )
 }
 

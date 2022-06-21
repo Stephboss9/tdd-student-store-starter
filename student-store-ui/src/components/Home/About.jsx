@@ -14,7 +14,7 @@ export default function About() {
                 <p className='about-description'>All proceeds go towards bringing high quality CS education to college students around the country.</p>
             </div>
             <div className='image-container'>
-                <img class = "codepath-image" src = {giant_codepath}></img>
+                <img className = "codepath-image" src = {giant_codepath}></img>
             </div>
 
         </div>

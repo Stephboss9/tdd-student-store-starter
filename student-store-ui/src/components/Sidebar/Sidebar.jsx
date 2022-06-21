@@ -1,5 +1,6 @@
 import * as React from "react"
 import "./Sidebar.css"
+import { useEffect } from "react"
 import "../ShoppingCart/ShoppingCart.css"
 
 export default function Sidebar(props) {
@@ -31,7 +32,7 @@ export function ShoppingCart(props) {
         <h4 className="shopping-cart-header">Shopping Cart</h4>
         <button className="cart-icon open"><i className="material-icons md-48 open">add_shopping_cart</i></button>
       </div>
-        {props.shoppingCart.length === 0?<h4 className="no-items">No items added to shopping cart yet. Start shopping now!</h4>:null}
+        {props.shoppingCart.length === 0? <h4 className="no-items">No items added to shopping cart yet. Start shopping now!</h4>:null}
         <div className="cart-table-container">
           <div className="cart-table">
             <div className="cart-table-headers">
@@ -41,18 +42,20 @@ export function ShoppingCart(props) {
               <h4 className="cart-table-header">Cost</h4>
             </div>
             <div className="cart-table-item-rows">
-              <div className="item-row">
-                <h4 className="cart-product-name">Rice Krispies</h4>
-                <h4 className="cart-product-quantity">5</h4>
-                <h4 className="cart-product-price">$1.99</h4>
-                <h4 className="cart-product-total">$10.55</h4>
-              </div>
-              <div className="item-row">
-                <h4 className="cart-product-name">Cheetos</h4>
-                <h4 className="cart-product-quantity">5</h4>
-                <h4 className="cart-product-price">$1.99</h4>
-                <h4 className="cart-product-total">$10.55</h4>
-              </div>
+              {props.shoppingCart.map((product) => { return(
+                 <div className="item-row">
+                 <h4 className="cart-product-name">{props.products.find((item) => {
+                   return (item.id == product.id)  
+                 }).name}</h4>
+                 <h4 className="cart-product-quantity">{product.quantity}</h4>
+                 <h4 className="cart-product-price">{props.products.find((item) => {
+                   return (item.id == product.id)  
+                 }).price}</h4>
+                 <h4 className="cart-product-total">{props.products.find((item) => {
+                   return (item.id == product.id)  
+                 }).price * product.quantity}</h4>
+               </div>)
+              })}
             </div>
             <div className="receipt">
                 <div className="subtotal-container">

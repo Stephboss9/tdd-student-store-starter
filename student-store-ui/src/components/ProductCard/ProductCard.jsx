@@ -8,24 +8,24 @@ import {
 
 import "./ProductCard.css"
 
-export default function ProductCard(product) {
+export default function ProductCard(props) {
     return (
         <div className="product-card">
           
-         <Link to = {`/products/${product.product.id}`}> <div className="media">
-          <img class = "product-image" src = {product.product.image}/>
+         <Link to = {`/products/${props.product.id}`}> <div className="media">
+          <img className = "product-image" src = {props.product.image}/>
           </div>
           </Link>
 
             <div className = "product-info">
                 <div className="main-info">
-                <h4 className>{product.product.name}</h4>
-                <h4 className= "product-price">${product.product.price}</h4>
-                <p className='product-description'>{product.showDescription?product.product.description:null}</p>
+                <h4 className = "product-name">{props.product.name}</h4>
+                <h4 className= "product-price">${props.product.price}</h4>
+                <p className='product-description'>{props.showDescription?props.product.description:null}</p>
                  </div>
               <div className = "product-actions">
-                <button className="add"><i className="material-icons">add</i></button>
-                <button className="remove"><i className="material-icons">remove</i></button>
+                <button className="add" onClick={() => props.handleAddItemToCart(props.product.id)}><i className="material-icons">add</i></button>
+                <button className="remove" onClick={()=> props.handleRemoveItemToCart(props.product.id)}><i className="material-icons">remove</i></button>
               </div>
             </div>
             

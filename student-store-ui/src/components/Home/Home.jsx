@@ -40,20 +40,21 @@ export default function Home(props) {
     <div className="home">
       <Hero/>
       <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange} handleCategory = {handleCategory}/>
-      (<ProductGrid  categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false? props.products:currentProducts} input = {props.input}/>)
+      (<ProductGrid  handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false?
+         props.products:currentProducts} input = {props.input}/>)
       <About/>
       <Contact/>
     </div>
   )
 } 
 
-export function ProductGrid(products) {
+export function ProductGrid(props) {
 
   return (
     <div className="product-grid">
      {
-       products.products.map(currentProduct => {
-        return (<ProductCard key = {currentProduct.id} product = {currentProduct}/>)
+       props.products.map(currentProduct => {
+        return (<ProductCard  handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} key = {currentProduct.id} product = {currentProduct}/>)
       })
      }
      
