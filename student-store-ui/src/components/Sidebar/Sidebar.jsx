@@ -31,7 +31,7 @@ export function ShoppingCart(props) {
     let subTotal = 0
     props.shoppingCart.map(current => {
       subTotal += (props.products.find((item) => {
-        return (item.id == current.id)  
+        return (item.id == current.itemId)  
       }).price*current.quantity)
     })
     return subTotal
@@ -67,14 +67,14 @@ export function ShoppingCart(props) {
               {props.shoppingCart.map((product) => { return(
                  <div className="item-row">
                  <h4 className="cart-product-name">{props.products.find((item) => {
-                   return (item.id == product.id)  
+                   return (item.id == product.itemId)  
                  }).name}</h4>
                  <h4 className="cart-product-quantity">{product.quantity}</h4>
                  <h4 className="cart-product-price">${props.products.find((item) => {
-                   return (item.id == product.id)  
+                   return (item.id == product.itemId)  
                  }).price}</h4>
                  <h4 className="cart-product-total">${(props.products.find((item) => {
-                   return (item.id == product.id)  
+                   return (item.id == product.itemId)  
                  }).price*product.quantity).toFixed(2)}</h4>
                </div>)
               })}

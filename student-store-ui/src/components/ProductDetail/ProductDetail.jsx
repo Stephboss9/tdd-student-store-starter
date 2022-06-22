@@ -8,7 +8,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import "./ProductDetail.css"
 
 
-export default function ProductDetail() {
+export default function ProductDetail(props) {
     const [product, setProduct] = useState({})
     let {productId} = useParams()
 
@@ -24,7 +24,8 @@ export default function ProductDetail() {
 
   return (
     <div className='product-detail'>
-        <ProductView product = {product}/>
+        <ProductView product = {product} productId = {productId} quantity = {props.getQuantity(product)} handleAddItemToCart = {props.handleAddItemToCart}
+        handleRemoveItemToCart = {props.handleRemoveItemToCart}/>
     </div>
   )
 }
@@ -34,8 +35,11 @@ export default function ProductDetail() {
 export function ProductView(props) {
   return (
     <div className='product-view'>
+        <span className='id-container'><h2 className='product-id'> Product #{props.productId}</h2></span>
         <div className = "view-info">
-        <ProductCard product = {props.product} showDescription = {true}/>
+        <ProductCard product = {props.product} showDescription = {true} productId = {props.productId}
+        quantity = {props.quantity} handleAddItemToCart = {props.handleAddItemToCart}
+        handleRemoveItemToCart = {props.handleRemoveItemToCart}/>
         </div>
         
     </div>

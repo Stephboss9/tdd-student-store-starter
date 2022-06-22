@@ -24,6 +24,7 @@ export default function App() {
  const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
  const [shoppingCart, setShoppingCart] = useState([])
  const [input, setInput] = useState("")
+ const [quantities, setQuantities] = ([])
 // const [CheckoutForm, setCheckoutForm] = 
 
   useEffect(() => {
@@ -35,7 +36,15 @@ export default function App() {
       setFetching(false)
   });}
  , [])
-
+/*
+ let getQuantity = (product) => {
+  let productData = shoppingCart.filter(current => {
+    (current.id === product.id)
+   })
+   console.log("getQuantity call check", productData)
+   return productData[0]
+}
+*/
  //Toggles the sidebar
  let handleOnToggle = ()=> {
     let sidebar = document.querySelector(".sidebar");
@@ -49,8 +58,8 @@ export default function App() {
  }
 
  let handleAddItemToCart = (productId) => {
-      let newProd = {id: productId, quantity:1}
-      let cartCopy = shoppingCart.filter(current => { if (current.id === productId){
+      let newProd = {itemId: productId, quantity:1}
+      let cartCopy = shoppingCart.filter(current => { if (current.itemId === productId){
           newProd.quantity = current.quantity + 1;
           return false;
         } else {return true;}
@@ -61,15 +70,24 @@ export default function App() {
 }
 
 let handleRemoveItemToCart  = (productId) => {
-  let newProd = {id: productId, quantity:1}
-      let cartCopy = shoppingCart.filter(current => { if (current.id === productId){
+  let newProd = {itemId: productId, quantity:1}
+      let cartCopy = shoppingCart.filter(current => { if (current.itemId === productId){
           newProd.quantity = current.quantity - 1;
           return false;
         } else {return true;}
       }
     )  
+    console.log(newProd.name)
       if(newProd.quantity != 0){cartCopy.push(newProd)}
       setShoppingCart(cartCopy)
+}
+
+let getQuantity = (currentProduct)=> {
+  let item = shoppingCart.find((current) => {
+    return (current.itemId === currentProduct.id)
+   })
+   return (!item?null:item.quantity)
+
 }
 
  
@@ -86,8 +104,8 @@ let handleRemoveItemToCart  = (productId) => {
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
               handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 
-              shoppingCart = {shoppingCart}/>}/> 
-              <Route path= "/products/:productId" element={<ProductDetail/>}/>
+              shoppingCart = {shoppingCart} getQuantity = {getQuantity}/>}/> 
+              <Route path= "/products/:productId" element={<ProductDetail getQuantity = {getQuantity}  handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart}/>}/>
               <Route path= "*" element ={<NotFound/>}/>
           </Routes>
           <Footer/>

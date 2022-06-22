@@ -11,8 +11,6 @@ export default function Home(props) {
   const [currentProducts, setCurrentProducts] = useState([])
   const [categoryBtn, setCategoryBtn] = useState(false)
 
-   
-
    let handleOnSearchChange = (event) => {
     props.setInput(event.target.value)
     
@@ -36,13 +34,12 @@ export default function Home(props) {
    }
 
 
-
   return (
     <div className="home">
       <Hero/>
       <Search setInput = {props.setInput} handleOnSearchChange = {handleOnSearchChange} handleCategory = {handleCategory}/>
-      (<ProductGrid  handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false?
-         props.products:currentProducts} input = {props.input} />)
+      (<ProductGrid  getQuantity = {props.getQuantity} handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} categoryBtn = {categoryBtn} products = {props.input.length === 0 && categoryBtn === false?
+         props.products:currentProducts} input = {props.input} shoppingCart = {props.shoppingCart}/>)
       <About/>
       <Contact/>
     </div>
@@ -50,13 +47,13 @@ export default function Home(props) {
 } 
 
 export function ProductGrid(props) {
- 
+  
 
   return (
     <div className="product-grid">
      {
        props.products.map(currentProduct => {
-        return (<ProductCard  handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} key = {currentProduct.id} product = {currentProduct}/>)
+        return (<ProductCard quantity = {props.getQuantity(currentProduct)} productId = {currentProduct.id} handleRemoveItemToCart = {props.handleRemoveItemToCart} handleAddItemToCart = {props.handleAddItemToCart} key = {currentProduct.id} product = {currentProduct}/>)
       })
      }
      
