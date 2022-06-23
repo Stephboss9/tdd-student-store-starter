@@ -21,11 +21,12 @@ export default function App() {
  const [products, setProducts] = useState([])
  const [isFetching, setFetching] = useState(false)
  const [error, setError] = useState("No Error")
- const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
+ const [isSubmitted, setSubmitted] = useState(null)
+const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
  const [shoppingCart, setShoppingCart] = useState([])
  const [input, setInput] = useState("")
  const [quantities, setQuantities] = ([])
-// const [CheckoutForm, setCheckoutForm] = 
+ const [checkoutForm, setCheckoutForm] = useState({name:"", email:""})
 
   useEffect(() => {
     axios.get('https://codepath-store-api.herokuapp.com/store').then(response => {
@@ -51,6 +52,7 @@ export default function App() {
     sidebar.classList.toggle("open")
     if(isOpen){
       setOpen(false)
+      setSubmitted(null)
     }
     else {
       setOpen(true)
@@ -82,6 +84,34 @@ let handleRemoveItemToCart  = (productId) => {
       setShoppingCart(cartCopy)
 }
 
+let handleOnCheckoutFormChange = (event) => {
+ 
+    const {name, value} = event.target
+    
+      setCheckoutForm(currentState =>  ({
+        ...currentState, [name]:value
+      }))
+}
+
+let handleOnSubmitCheckoutForm = async () => {
+  console.log("ey")
+  {console.log(checkoutForm.email)}
+  {console.log(checkoutForm.name)}
+  try {
+    let response =  await axios.post("https://codepath-store-api.herokuapp.com/store" , {
+      user: {
+        name:checkoutForm.name, 
+        email:checkoutForm.email
+      }
+      })
+      console.log(response)
+  }
+  catch(error) {
+    setError(error)
+  }
+}
+
+
 let getQuantity = (currentProduct)=> {
   let item = shoppingCart.find((current) => {
     return (current.itemId === currentProduct.id)
@@ -90,17 +120,15 @@ let getQuantity = (currentProduct)=> {
 
 }
 
- 
-
-
-
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           {}
           <Navbar />
-          <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}/>
+          <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}  setShoppingCart = {setShoppingCart}
+          setCheckoutForm = {setCheckoutForm}  isSubmitted = {isSubmitted} setSubmitted = {setSubmitted}
+          checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} error = {error} />
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
               handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 

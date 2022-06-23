@@ -11,6 +11,8 @@
  transition: all .2s cubic-bezier(.215,.61,.355,1);
  align-items: center;
  font-family: 'Ubuntu', sans-serif;
+ overflow: scroll
+
 }
 
 .closed {

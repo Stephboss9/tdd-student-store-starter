@@ -10,42 +10,42 @@ import "./ProductDetail.css"
 
 export default function ProductDetail(props) {
     const [product, setProduct] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
     let {productId} = useParams()
 
    
 
     useEffect( () => {
+        setIsLoading(true)
         const obtainProduct = async () => {
         const response = await (axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`))
         const responseData = response.data.product
         setProduct(responseData)}
         obtainProduct()
+        setIsLoading(false)
 }, [])
 
   return (
     <div className='product-detail'>
-        <ProductView product = {product} productId = {productId} quantity = {props.getQuantity(product)} handleAddItemToCart = {props.handleAddItemToCart}
+        <ProductView isLoading = {isLoading} product = {product} productId = {productId} quantity = {props.getQuantity(product)} handleAddItemToCart = {props.handleAddItemToCart}
         handleRemoveItemToCart = {props.handleRemoveItemToCart}/>
     </div>
   )
 }
 
 
-
 export function ProductView(props) {
   return (
     <div className='product-view'>
-        <span className='id-container'><h2 className='product-id'> Product #{props.productId}</h2></span>
-        <div className = "view-info">
+      
+        {props.isLoading?<span className='id-container'><h2 className='loading'> Loading...</h2></span>:<span className='id-container'><h2 className='product-id'> Product #{props.productId}</h2></span>}
+        {!props.isLoading?<div className = "view-info">
         <ProductCard product = {props.product} showDescription = {true} productId = {props.productId}
         quantity = {props.quantity} handleAddItemToCart = {props.handleAddItemToCart}
         handleRemoveItemToCart = {props.handleRemoveItemToCart}/>
-        </div>
+        </div>:null}
         
     </div>
-
-
-   
   )
 }
 

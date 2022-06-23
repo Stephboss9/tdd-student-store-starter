@@ -35,21 +35,18 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
     border-bottom: 1px solid var(--border-color);
     align-items: center;
 }
 
 .item-row h4 {
-    flex: 0 1 8%;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
 }
 
-.cart-product-name {
-    margin-left: 22px;
-}
-.cart-product-total {
-    margin-right: 20px;
-}
+
 
 .receipt {
     display: flex;

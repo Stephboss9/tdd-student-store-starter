@@ -19,15 +19,39 @@
     
   }
   
-  .product-main-info {
-    margin-top: 0;
-  }
-  
   .product-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
     padding: 20px 20px;
   }
+
+  
+
+  .product-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90px;
+    height: 100%;
+    align-self: flex-end;
+  }
+
+  
+ 
+.quantity-container {
+ 
+  margin:0 auto;
+
+}
+ .product-quantity {
+
+  
+ }
+  
+  
 
   .main-info {
     display: flex;

@@ -1,8 +1,7 @@
 import * as React from "react"
 import "./Sidebar.css"
-import { useEffect } from "react"
 import "../ShoppingCart/ShoppingCart.css"
-import "../Checkout/Checkout.css"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 export default function Sidebar(props) {
 
@@ -19,7 +18,9 @@ export default function Sidebar(props) {
             <button className="cart-icon"><i className="material-icons md-48">fact_check</i></button>
           </div>}
           {props.isOpen?<ShoppingCart isOpen = {props.isOpen} products = {props.products} shoppingCart = {props.shoppingCart}/>:null}
-          {props.isOpen?<CheckoutForm/>:null}
+          {props.isOpen?<CheckoutForm isOpen = {props.isOpen}  shoppingCart = {props.shoppingCart} checkoutForm = {props.checkoutForm} error = {props.error}
+          setCheckoutForm = {props.setCheckoutForm} setShoppingCart = {props.setShoppingCart} setSubmitted = {props.setSubmitted} isSubmitted = {props.isSubmitted}
+          handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/>:null}
         </div>
     </section >
   )
@@ -105,22 +106,3 @@ export function ShoppingCart(props) {
 }
 
 
-export function CheckoutForm(props) {
-
-  return (
-    <div className="checkout-form">
-        <div className="form-wrapper">
-          <h4 className="checkout-title">Checkout</h4>
-          <form className="form-fields">
-            <span className="input-1-header">Email</span>
-            <input className="checkout-form-input" type="email" name = "email" placeholder = "student@codepath.org">
-            </input>
-            <span className="input-2-header">Name</span>
-            <input className="checkout-form-input" type="text" name = "name" placeholder = "Student Name">
-            </input>
-          </form>
-         <button className="checkout-button"><i className="material-icons checkout">checkout</i> </button>
-        </div>
-    </div>
-  )
-}

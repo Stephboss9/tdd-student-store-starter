@@ -28,10 +28,12 @@ export default function ProductCard(props) {
                 <p className='product-description'>{props.showDescription?props.product.description:null}</p>
                 </div>
               <div className = "product-actions">
-                <button className="add" onClick={() => {props.handleAddItemToCart(props.product.id)}}><i className="material-icons">add</i></button>
-                <button className="remove" onClick={()=> {props.handleRemoveItemToCart(props.product.id)}}><i className="material-icons">remove</i></button>
+                <div className="buttons">
+                  <button className="add" onClick={() => {props.handleAddItemToCart(props.product.id)}}><i className="material-icons">add</i></button>
+                  <button className="remove" onClick={()=> {props.handleRemoveItemToCart(props.product.id)}}><i className="material-icons">remove</i></button>
+                </div>
+                <div className='quantity-container'><span className="product-quantity">{props.quantity}</span></div>
               </div>
-              <span className="product-quantity">{props.quantity}</span>
             </div>
             
         </div>
