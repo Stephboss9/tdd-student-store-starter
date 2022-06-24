@@ -24,7 +24,7 @@ storeRouter.get("/:productId", (req, res, next) => {
         if(!product) {
             throw new NotFoundError()
         }
-        res.status(200).json({product:product})
+        res.status(200).send({product:product})
     }
     catch(err) {
         next(err)
@@ -33,7 +33,15 @@ storeRouter.get("/:productId", (req, res, next) => {
 })
 
 storeRouter.post("/", (req, res, next) => {
-    res.status(200).send(req.body.name)
+    try {
+        const cart = req.body.shoppingCart
+        const user = req.body.user
+        const purchase = store.createPurchaseOrder(user, cart)
+        res.status(201).json({purchase:purchase})
+    }
+    catch (error) {
+        next(error)
+    }
 })
 
 
