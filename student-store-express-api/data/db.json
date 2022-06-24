@@ -145,5 +145,62 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 4,
+      "name": "Stephana Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 4,
+          "quantity": 3
+        }
+      ],
+      "total": "17.73",
+      "createdAt": "2022-06-24T12:58:23.769Z",
+      "receipt": [
+        "Showing receipt for Stephana Mbenga available at mbengastephane34@gmail.com:",
+        "1. total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98.",
+        "2. total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $6.00.",
+        "3. total Coconut Water purchased at a cost of $3.25 for a total cost of $9.75.",
+        "Before Taxes, the subtotal was 17.73 After taxes and fees were applied, the total comes out to 1.551375. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Stephana Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 4,
+          "quantity": 3
+        }
+      ],
+      "total": "17.73",
+      "createdAt": "2022-06-24T13:05:42.808Z",
+      "receipt": [
+        "Showing receipt for Stephana Mbenga available at mbengastephane34@gmail.com:",
+        "1. total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98.",
+        "2. total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $6.00.",
+        "3. total Coconut Water purchased at a cost of $3.25 for a total cost of $9.75.",
+        "Before Taxes, the subtotal was 17.73 After taxes and fees were applied, the total comes out to 1.551375. Thanks for shopping!"
+      ]
+    }
+  ]
 }

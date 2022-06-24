@@ -16,13 +16,22 @@ storeRouter.get("/", (req, res, next) => {
     }
 })
 
+storeRouter.get("/purchases", (req, res, next) => {
+    try {
+        const purchases = storeRouter.getPastOrders()
+        res.status(200).json({purchases:purchases})
+    } catch(err){
+        next(err)
+    }
+})
+
 
 storeRouter.get("/:productId", (req, res, next) => {
     try {
         const productId = req.params.productId
         const product = store.getProdById(productId)
         if(!product) {
-            throw new NotFoundError()
+            throw new NotFoundError("The product with that Id was not found")
         }
         res.status(200).send({product:product})
     }

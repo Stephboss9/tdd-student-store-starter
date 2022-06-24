@@ -33,12 +33,18 @@ class Store {
             throw new BadRequestError("looks there some info missing there")
         }
         //stores receipt
-        let receipt = `Showing receipt for ${user.name} available at\n${user.email}:\n`
-
+        let receipt = []
+        receipt[0] = `Showing receipt for ${user.name} available at ${user.email}:`
+        cart = cart.sort(function(a,b){return a.itemId - b.itemId})
         //go through the shopping cart and perform calculations
         for(let i = 0; i < cart.length; i++){
             let currentId = cart[i].itemId
             let currentQuantity = cart[i].quantity
+            if(i != cart.length - 1){
+                if(cart[i].itemId === cart[i+1].itemId){
+                    throw new BadRequestError("looks like there are duplicate items. Bruh, do you know how to shop?")
+                }
+            }
 
             if(!currentId || !currentQuantity) {
                 throw new BadRequestError("looks like there some info missing there. Bruh, do you know how to shop?")
@@ -51,10 +57,10 @@ class Store {
                 //add up the costs of all items
                totalCost += (price*currentQuantity)
                console.log(totalCost)
-                receipt+= `${i+1} total ${itemName} purchased at a cost of $${(price)} for a total /n cost of $${(price*currentQuantity)},`
+                receipt.push(`${i+1}. total ${itemName} purchased at a cost of $${(price)} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
             }
         }
-       receipt+= `Before Taxes, the subtotal was ${totalCost}/nAfter taxes and fees were applied, the total comes out to ${(totalCost*.0875)}. Thanks for shopping!`
+       receipt.push(`Before Taxes, the subtotal was ${Number.parseFloat(totalCost).toFixed(2)} After taxes and fees were applied, the total comes out to ${((totalCost)*(0.0875))}. Thanks for shopping!`)
         //store order info
         const createdAt = new Date().toISOString()
     
@@ -69,8 +75,17 @@ class Store {
         }
         //return the purchase order
         let purchase = newPurchaseOrder
+        //add this purchase to list of past purchases
+        storage.get("purchases").push(purchase).write()
         return purchase
 
+    }
+
+    static getPastOrders() {
+        let purchases = storage.get("purchases").orderBy("createdAt", "asc")
+        if(!purchases) {throw new BadRequestError("Looks like you have not made an order yet. ")
+    }
+        return purchases
     }
 
 }
