@@ -18,7 +18,7 @@ storeRouter.get("/", (req, res, next) => {
 
 storeRouter.get("/purchases", (req, res, next) => {
     try {
-        const purchases = storeRouter.getPastOrders()
+        const purchases = store.getPastOrders()
         res.status(200).json({purchases:purchases})
     } catch(err){
         next(err)

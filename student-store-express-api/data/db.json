@@ -201,6 +201,34 @@
         "3. total Coconut Water purchased at a cost of $3.25 for a total cost of $9.75.",
         "Before Taxes, the subtotal was 17.73 After taxes and fees were applied, the total comes out to 1.551375. Thanks for shopping!"
       ]
+    },
+    {
+      "id": 4,
+      "name": "Stephana Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 5
+        }
+      ],
+      "total": "120.95",
+      "createdAt": "2022-06-24T13:12:45.417Z",
+      "receipt": [
+        "Showing receipt for Stephana Mbenga available at mbengastephane34@gmail.com:",
+        "1. total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $6.00.",
+        "2. total Fruit Medley purchased at a cost of $7.5 for a total cost of $15.00.",
+        "3. total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $99.95.",
+        "Before Taxes, the subtotal was 120.95 After taxes and fees were applied, the total comes out to 10.583124999999999. Thanks for shopping!"
+      ]
     }
   ]
 }
