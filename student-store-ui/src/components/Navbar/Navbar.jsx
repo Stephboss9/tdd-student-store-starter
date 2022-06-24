@@ -21,6 +21,8 @@ export default function Navbar() {
     <Link className = "link" to="/ShoppingCart">About Us</Link>
     <Link className = "link" to="">Contact Us</Link>
     <Link className = "link" to="">Buy Now</Link>
+    <Link className = "link" to="/purchases">Orders</Link>
+
     </div>
     
     </nav>

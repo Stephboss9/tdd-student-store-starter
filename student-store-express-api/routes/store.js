@@ -24,7 +24,7 @@ storeRouter.get("/purchases", (req, res, next) => {
 })
 
 
-storeRouter.get("/:productId", (req, res, next) => {
+storeRouter.get("/products/:productId", (req, res, next) => {
     try {
         const productId = req.params.productId
         const product = store.getProdById(productId)

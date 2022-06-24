@@ -24,6 +24,7 @@ class Store {
     static createPurchaseOrder (user, cart) {
         //declare variables
         let totalCost = 0
+        let totalItems = 0
         //check if order is valid
         if(!user || !cart) {
             throw new BadRequestError("looks there some info missing there")
@@ -57,6 +58,7 @@ class Store {
                totalCost += (price*currentQuantity)
                console.log(totalCost)
                 receipt.push(`${i+1}. ${currentQuantity} total ${itemName} purchased at a cost of $${(price)} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
+                totalItems += currentQuantity
             }
         }
        receipt.push(`Before Taxes, the subtotal was ${Number.parseFloat(totalCost).toFixed(2)} After taxes and fees were applied, the total comes out to ${((totalCost)*(0.0875))}. Thanks for shopping!`)
@@ -69,6 +71,7 @@ class Store {
             email:user.email,
             order:cart,
             total:Number.parseFloat(totalCost).toFixed(2),
+            totalItems:totalItems,
             createdAt:createdAt,
             receipt:receipt
         }
@@ -85,6 +88,17 @@ class Store {
         if(!purchases) {throw new BadRequestError("Looks like you have not made an order yet. ")
     }
         return purchases
+    }
+
+    static checkUser(user) {
+
+        let currentUserName = storage.get("user").value().name
+        let currentUserEmail = storage.get("email").value().email
+        if (currentUserName != user.name || currentUserEmail != user.email){
+            storage.remove("user")
+        }
+        const newUser = {"user":"", "name":""}
+        storage.set(user, newUser)
     }
 
 }

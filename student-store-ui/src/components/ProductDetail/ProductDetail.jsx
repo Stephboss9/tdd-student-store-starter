@@ -18,7 +18,7 @@ export default function ProductDetail(props) {
     useEffect( () => {
         setIsLoading(true)
         const obtainProduct = async () => {
-        const response = await (axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`))
+        const response = await (axios.get(`http://localhost:3001/store/products/${productId}`))
         const responseData = response.data.product
         setProduct(responseData)}
         obtainProduct()

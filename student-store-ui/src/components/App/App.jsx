@@ -4,6 +4,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import Footer from "../Footer/Footer"
+import Orders from "../Orders/Orders"
 import NotFound from "../NotFound/NotFound"
 import { useState } from "react"
 import { useEffect } from "react"
@@ -28,6 +29,8 @@ export default function App() {
  const [quantities, setQuantities] = ([])
  const [checkoutForm, setCheckoutForm] = useState({name:"", email:""})
  const [receipt, setReceipt] = useState(null)
+ const [ordersError, setOrdersError] = useState(null)
+ const [pastOrders, setPastOrders] = useState([])
 
   useEffect(() => {
     axios.get('http://localhost:3001/store').then(response => {
@@ -97,9 +100,6 @@ let handleOnCheckoutFormChange = (event) => {
 }
 
 let handleOnSubmitCheckoutForm = async () => {
-  console.log("ey")
-  {console.log(checkoutForm.email)}
-  {console.log(checkoutForm.name)}
   try {
     let response =  await axios.post("http://localhost:3001/store" , {
       shoppingCart,
@@ -108,17 +108,23 @@ let handleOnSubmitCheckoutForm = async () => {
         email:checkoutForm.email
       }
       })
-      console.log(response.data.purchase)
       setReceipt(response.data.purchase.receipt)
       setError(null)
 
   }
   catch(error) {
-    console.log(error.message)
     setError(error)
   }
 }
 
+let handleOnPastOrders = () => {
+  axios.get('http://localhost:3001/store/purchases').then(response => {
+    console.log(response)
+    setPastOrders(response.data.purchases)
+  }).catch (error => {
+    setOrdersError(error)
+})
+}
 
 let getQuantity = (currentProduct)=> {
   let item = shoppingCart.find((current) => {
@@ -143,7 +149,8 @@ let getQuantity = (currentProduct)=> {
               handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 
               shoppingCart = {shoppingCart} getQuantity = {getQuantity}/>}/> 
               <Route path= "/products/:productId" element={<ProductDetail getQuantity = {getQuantity}  handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart}/>}/>
-              <Route path= "*" element ={<NotFound/>}/>
+              <Route path= "*" element ={<NotFound/>}/> 
+              <Route path = "/purchases" element = {<Orders handleOnPastPurchases = {handleOnPastOrders} orders = {ordersError} setOrdersError = {setOrdersError} setPastOrders = {setPastOrders} pastOrders = {pastOrders}/>}/>
           </Routes>
           <Footer/>
         </main>
