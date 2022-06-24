@@ -1,7 +1,6 @@
 import React from 'react'
 import "./CheckoutForm.css"
 export default function CheckoutForm(props) {
-  console.log(props)
 
     return (
       <div className="checkout-form">
@@ -29,9 +28,16 @@ export default function CheckoutForm(props) {
                 console.log(error)
                 props.setSubmitted(false)
               }}}>Checkout </button>
-              {console.log(props.isOpen)}
               <div className = "response">
-                {props.isSubmitted && props.isOpen?<span className = "success">Success!</span>:(props.error?<span className = "error">There was an error getting things submitted</span>:null)}
+                {props.isSubmitted && props.error === null?<span className = "success">Success!</span>:null}
+                {props.error !=null? <span className = "error">There was an error getting things submitted. Did you provide a name/email and somes items to buy</span>:null}
+
+              </div>
+              <div className='receipt'>
+              {props.receipt === null?null:props.receipt.map((String) => {
+                  return (<p className = "receipt-text">{String}</p>)
+                })}
+                {console.log(props.receipt)}
               </div>
       </div>
     )

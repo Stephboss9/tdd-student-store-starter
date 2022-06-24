@@ -20,16 +20,17 @@ import axios from "axios"
 export default function App() {
  const [products, setProducts] = useState([])
  const [isFetching, setFetching] = useState(false)
- const [error, setError] = useState("No Error")
+ const [error, setError] = useState(null)
  const [isSubmitted, setSubmitted] = useState(null)
-const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
+ const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
  const [shoppingCart, setShoppingCart] = useState([])
  const [input, setInput] = useState("")
  const [quantities, setQuantities] = ([])
  const [checkoutForm, setCheckoutForm] = useState({name:"", email:""})
+ const [receipt, setReceipt] = useState(null)
 
   useEffect(() => {
-    axios.get('https://codepath-store-api.herokuapp.com/store').then(response => {
+    axios.get('http://localhost:3001/store').then(response => {
       setProducts(response.data.products)
       setFetching(true)
     }).catch (error => {
@@ -56,6 +57,8 @@ const [isOpen, setOpen] = useState(false) //represents the open/closed state of 
     }
     else {
       setOpen(true)
+      setError(null)
+      setReceipt(null)
     }
  }
 
@@ -98,15 +101,20 @@ let handleOnSubmitCheckoutForm = async () => {
   {console.log(checkoutForm.email)}
   {console.log(checkoutForm.name)}
   try {
-    let response =  await axios.post("https://codepath-store-api.herokuapp.com/store" , {
+    let response =  await axios.post("http://localhost:3001/store" , {
+      shoppingCart,
       user: {
         name:checkoutForm.name, 
         email:checkoutForm.email
       }
       })
-      console.log(response)
+      console.log(response.data.purchase)
+      setReceipt(response.data.purchase.receipt)
+      setError(null)
+
   }
   catch(error) {
+    console.log(error.message)
     setError(error)
   }
 }
@@ -128,7 +136,8 @@ let getQuantity = (currentProduct)=> {
           <Navbar />
           <Sidebar isOpen = {isOpen} products = {products} handleOnToggle = {handleOnToggle} shoppingCart = {shoppingCart}  setShoppingCart = {setShoppingCart}
           setCheckoutForm = {setCheckoutForm}  isSubmitted = {isSubmitted} setSubmitted = {setSubmitted}
-          checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} error = {error} />
+          checkoutForm = {checkoutForm} handleOnCheckoutFormChange = {handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {handleOnSubmitCheckoutForm} error = {error}
+          receipt = {receipt} />
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
               handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 

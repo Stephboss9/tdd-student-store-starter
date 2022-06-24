@@ -9,7 +9,6 @@ class Store {
         //return the products
         const products = storage.get("products")
         return products
-
     }
 
 
@@ -40,12 +39,12 @@ class Store {
         for(let i = 0; i < cart.length; i++){
             let currentId = cart[i].itemId
             let currentQuantity = cart[i].quantity
+
             if(i != cart.length - 1){
                 if(cart[i].itemId === cart[i+1].itemId){
                     throw new BadRequestError("looks like there are duplicate items. Bruh, do you know how to shop?")
                 }
             }
-
             if(!currentId || !currentQuantity) {
                 throw new BadRequestError("looks like there some info missing there. Bruh, do you know how to shop?")
             }
@@ -57,7 +56,7 @@ class Store {
                 //add up the costs of all items
                totalCost += (price*currentQuantity)
                console.log(totalCost)
-                receipt.push(`${i+1}. total ${itemName} purchased at a cost of $${(price)} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
+                receipt.push(`${i+1}. ${currentQuantity} total ${itemName} purchased at a cost of $${(price)} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
             }
         }
        receipt.push(`Before Taxes, the subtotal was ${Number.parseFloat(totalCost).toFixed(2)} After taxes and fees were applied, the total comes out to ${((totalCost)*(0.0875))}. Thanks for shopping!`)

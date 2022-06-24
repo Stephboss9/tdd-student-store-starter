@@ -18,7 +18,7 @@ export default function Sidebar(props) {
             <button className="cart-icon"><i className="material-icons md-48">fact_check</i></button>
           </div>}
           {props.isOpen?<ShoppingCart isOpen = {props.isOpen} products = {props.products} shoppingCart = {props.shoppingCart}/>:null}
-          {props.isOpen?<CheckoutForm isOpen = {props.isOpen}  shoppingCart = {props.shoppingCart} checkoutForm = {props.checkoutForm} error = {props.error}
+          {props.isOpen?<CheckoutForm receipt = {props.receipt} isOpen = {props.isOpen}  shoppingCart = {props.shoppingCart} checkoutForm = {props.checkoutForm} error = {props.error}
           setCheckoutForm = {props.setCheckoutForm} setShoppingCart = {props.setShoppingCart} setSubmitted = {props.setSubmitted} isSubmitted = {props.isSubmitted}
           handleOnCheckoutFormChange = {props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm = {props.handleOnSubmitCheckoutForm}/>:null}
         </div>

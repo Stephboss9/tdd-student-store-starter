@@ -229,6 +229,258 @@
         "3. total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $99.95.",
         "Before Taxes, the subtotal was 120.95 After taxes and fees were applied, the total comes out to 10.583124999999999. Thanks for shopping!"
       ]
+    },
+    {
+      "id": 4,
+      "name": "Stephana Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        },
+        {
+          "itemId": 6,
+          "quantity": 2
+        }
+      ],
+      "total": "60.98",
+      "createdAt": "2022-06-24T13:20:24.824Z",
+      "receipt": [
+        "Showing receipt for Stephana Mbenga available at mbengastephane34@gmail.com:",
+        "1. total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $6.00.",
+        "2. total Fruit Medley purchased at a cost of $7.5 for a total cost of $15.00.",
+        "3. total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $39.98.",
+        "Before Taxes, the subtotal was 60.98 After taxes and fees were applied, the total comes out to 5.335749999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "stephane",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "3.00",
+      "createdAt": "2022-06-24T15:54:32.761Z",
+      "receipt": [
+        "Showing receipt for stephane available at mbengastephane34@gmail.com:",
+        "1. 2 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $3.00.",
+        "Before Taxes, the subtotal was 3.00 After taxes and fees were applied, the total comes out to 0.26249999999999996. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": "7.47",
+      "createdAt": "2022-06-24T16:17:20.695Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 3 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $4.50.",
+        "Before Taxes, the subtotal was 7.47 After taxes and fees were applied, the total comes out to 0.6536249999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-24T16:17:58.502Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "Before Taxes, the subtotal was 0.00 After taxes and fees were applied, the total comes out to 0. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "5.97",
+      "createdAt": "2022-06-24T16:55:02.544Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 2 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $3.00.",
+        "Before Taxes, the subtotal was 5.97 After taxes and fees were applied, the total comes out to 0.5223749999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 3
+        }
+      ],
+      "total": "11.97",
+      "createdAt": "2022-06-24T16:55:28.037Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 2 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $3.00.",
+        "2. 3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97.",
+        "Before Taxes, the subtotal was 11.97 After taxes and fees were applied, the total comes out to 1.047375. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 3
+        },
+        {
+          "itemId": 6,
+          "quantity": 3
+        }
+      ],
+      "total": "68.94",
+      "createdAt": "2022-06-24T16:55:47.105Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $8.97.",
+        "2. 3 total Bar Code Shirts purchased at a cost of $19.99 for a total cost of $59.97.",
+        "Before Taxes, the subtotal was 68.94 After taxes and fees were applied, the total comes out to 6.0322499999999994. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": "7.47",
+      "createdAt": "2022-06-24T17:03:13.612Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 3 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $4.50.",
+        "Before Taxes, the subtotal was 7.47 After taxes and fees were applied, the total comes out to 0.6536249999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": "7.47",
+      "createdAt": "2022-06-24T17:03:41.284Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 3 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $4.50.",
+        "Before Taxes, the subtotal was 7.47 After taxes and fees were applied, the total comes out to 0.6536249999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        }
+      ],
+      "total": "7.47",
+      "createdAt": "2022-06-24T17:04:19.612Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 3 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $4.50.",
+        "Before Taxes, the subtotal was 7.47 After taxes and fees were applied, the total comes out to 0.6536249999999999. Thanks for shopping!"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Stephane Mbenga",
+      "email": "mbengastephane34@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        },
+        {
+          "itemId": 5,
+          "quantity": 3
+        }
+      ],
+      "total": "41.93",
+      "createdAt": "2022-06-24T17:14:16.586Z",
+      "receipt": [
+        "Showing receipt for Stephane Mbenga available at mbengastephane34@gmail.com:",
+        "1. 3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97.",
+        "2. 3 total Flamin Hot Cheetos purchased at a cost of $1.5 for a total cost of $4.50.",
+        "3. 4 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $11.96.",
+        "4. 3 total Fruit Medley purchased at a cost of $7.5 for a total cost of $22.50.",
+        "Before Taxes, the subtotal was 41.93 After taxes and fees were applied, the total comes out to 3.668875. Thanks for shopping!"
+      ]
     }
   ]
 }
