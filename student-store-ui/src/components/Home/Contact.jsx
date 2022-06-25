@@ -4,7 +4,7 @@ import happy_person from "../../../Images/happy_person.svg"
 
 export default function Contact() {
   return (
-    <div className='contact-container'>
+    <div className='contact-container' id = "Contact">
         <h1 className='contact-header'>Contact Us</h1>
         <div className='contact-section'>
             <div className='contact-info'>

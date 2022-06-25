@@ -26,7 +26,6 @@ export default function App() {
  const [isOpen, setOpen] = useState(false) //represents the open/closed state of the sidebar
  const [shoppingCart, setShoppingCart] = useState([])
  const [input, setInput] = useState("")
- const [quantities, setQuantities] = ([])
  const [checkoutForm, setCheckoutForm] = useState({name:"", email:""})
  const [receipt, setReceipt] = useState(null)
  const [ordersError, setOrdersError] = useState(null)
@@ -65,6 +64,7 @@ export default function App() {
     }
  }
 
+ //adds items to the shopping cart
  let handleAddItemToCart = (productId) => {
       let newProd = {itemId: productId, quantity:1}
       let cartCopy = shoppingCart.filter(current => { if (current.itemId === productId){
@@ -76,8 +76,8 @@ export default function App() {
     cartCopy.push(newProd)
       setShoppingCart(cartCopy)
 }
-
-let handleRemoveItemToCart  = (productId) => {
+//removes items from the shopping cart
+let handleRemoveItemFromCart  = (productId) => {
   let newProd = {itemId: productId, quantity:1}
       let cartCopy = shoppingCart.filter(current => { if (current.itemId === productId){
           newProd.quantity = current.quantity - 1;
@@ -85,20 +85,18 @@ let handleRemoveItemToCart  = (productId) => {
         } else {return true;}
       }
     )  
-    console.log(newProd.name)
       if(newProd.quantity != 0){cartCopy.push(newProd)}
       setShoppingCart(cartCopy)
 }
-
-let handleOnCheckoutFormChange = (event) => {
+//gets the user's info
+let handleOnCheckoutFormChange = (name, value) => {
  
-    const {name, value} = event.target
-    
+  
       setCheckoutForm(currentState =>  ({
         ...currentState, [name]:value
       }))
 }
-
+//submits the users order
 let handleOnSubmitCheckoutForm = async () => {
   try {
     let response =  await axios.post("http://localhost:3001/store" , {
@@ -110,13 +108,14 @@ let handleOnSubmitCheckoutForm = async () => {
       })
       setReceipt(response.data.purchase.receipt)
       setError(null)
-
+      console.log(response)
   }
   catch(error) {
-    setError(error)
+  
+    setError(error.response.data.error.message)
   }
 }
-
+//gets the user's past orders
 let handleOnPastOrders = () => {
   axios.get('http://localhost:3001/store/purchases').then(response => {
     console.log(response)
@@ -125,7 +124,7 @@ let handleOnPastOrders = () => {
     setOrdersError(error)
 })
 }
-
+//gets the quantity for each item the user has added
 let getQuantity = (currentProduct)=> {
   let item = shoppingCart.find((current) => {
     return (current.itemId === currentProduct.id)
@@ -146,9 +145,9 @@ let getQuantity = (currentProduct)=> {
           receipt = {receipt} />
           <Routes>
               <Route path = "/" element ={<Home products = {products} input = {input} setInput = {setInput}  
-              handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} 
+              handleRemoveItemToCart = {handleRemoveItemFromCart} handleAddItemToCart = {handleAddItemToCart} 
               shoppingCart = {shoppingCart} getQuantity = {getQuantity}/>}/> 
-              <Route path= "/products/:productId" element={<ProductDetail getQuantity = {getQuantity}  handleRemoveItemToCart = {handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart}/>}/>
+              <Route path= "/products/:productId" element={<ProductDetail getQuantity = {getQuantity}  handleRemoveItemToCart = {handleRemoveItemFromCart} handleAddItemToCart = {handleAddItemToCart}/>}/>
               <Route path= "*" element ={<NotFound/>}/> 
               <Route path = "/purchases" element = {<Orders handleOnPastPurchases = {handleOnPastOrders} orders = {ordersError} setOrdersError = {setOrdersError} setPastOrders = {setPastOrders} pastOrders = {pastOrders}/>}/>
           </Routes>

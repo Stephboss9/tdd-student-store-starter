@@ -8,14 +8,18 @@ export default function Orders(props) {
        props.handleOnPastPurchases()
     },[])
   return (
-    <div className="orders-grid">
+    <div className = "orders-grid-container">
+        <h2 className = "orders-title">Past Transactions</h2> 
+         <div className="orders-grid">
        
-     {
-       props.pastOrders.map((currentPurchase, index) => {
-        return (<OrderCard purchase = {currentPurchase} orderNumber = {index+1}/>)
-      })
-     }
-     
+       {
+         props.pastOrders.map((currentPurchase, index) => {
+          return (<OrderCard purchase = {currentPurchase} orderNumber = {index+1}/>)
+        })
+       }
+       
+      </div>
+    
     </div>
   )
 }
@@ -27,13 +31,13 @@ export function OrderCard(props) {
        {
          <div className="order-card">
             <div className = "order-wrapper">
-            <h2 className = "order-title">Order#: {props.orderNumber}</h2>
+            <h2 className = "order-info-title">Order#: {props.orderNumber}</h2>
             <div className = "order-info">
                 <div className="main-info">
                 <p className = "order-name">Name: {props.purchase.name}</p>
                 <p className= "order-email">Email: {props.purchase.email}</p>
                 <p className='order-time'>Time: {props.purchase.createdAt}</p>
-                <p className='total-items'>{props.purchase.totalItems}</p>
+                <p className='total-items'>Quantity: {props.purchase.totalItems}</p>
                 <p className='order-total'>Total: ${props.purchase.total}</p>
                 </div>             
             </div>

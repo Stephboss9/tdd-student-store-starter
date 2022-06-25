@@ -15,11 +15,12 @@ export default function ProductCard(props) {
  
     return (
         <div className="product-card">
-          
-         <Link to = {`/products/${props.product.id}`}> <div className="media">
-          <img className = "product-image" src = {props.product.image}/>
+          <div className="media">
+            <Link to = {`/products/${props.productId}`}> 
+              <img className = "product-image" src = {props.product.image}/>
+              </Link>
           </div>
-          </Link>
+
 
             <div className = "product-info">
                 <div className="main-info">

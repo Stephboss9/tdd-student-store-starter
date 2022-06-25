@@ -6,7 +6,7 @@
         width: 95%;
         color: var(--pure-white);
         height: 100%;
-    
+        font-family: 'Ubuntu', sans-serif;
     }
 
     .form-wrapper {
@@ -54,4 +54,9 @@
     }
     .receipt-text {
         font-size: 17px;
+    }
+
+    .error {
+        font-weight: 600;
+        color: rgb(210, 46, 46);
     }

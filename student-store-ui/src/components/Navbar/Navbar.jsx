@@ -17,10 +17,9 @@ export default function Navbar() {
     <Link  to ="/"><img className = "icon" src = {fb_icon}/></Link> 
     </div>
     <div className="nav-links">
-    <Link className = "link" to="/">Home</Link>
-    <Link className = "link" to="/ShoppingCart">About Us</Link>
-    <Link className = "link" to="">Contact Us</Link>
-    <Link className = "link" to="">Buy Now</Link>
+    <a className = "link" href="#Home">Home</a>
+    <a className = "link" href="#About">About Us</a>
+    <a className = "link" href="#Contact">Contact Us</a>
     <Link className = "link" to="/purchases">Orders</Link>
 
     </div>
@@ -31,7 +30,6 @@ export default function Navbar() {
 
 export function Logo() {
   return (
-
     <div className="logo media"><Link to ="/"><img src = {companyLogo} className = "logo-img"/></Link></div> 
   )
 }

@@ -26,11 +26,11 @@ class Store {
         let totalCost = 0
         let totalItems = 0
         //check if order is valid
-        if(!user || !cart) {
-            throw new BadRequestError("looks there some info missing there")
+        if(!user || !cart || cart.length === 0) {
+            throw new BadRequestError("Please add some items to cart before checking out.")
         }
         if(!user.email || !user.name) {
-            throw new BadRequestError("looks there some info missing there")
+            throw new BadRequestError("Please make sure to provide your name and email.")
         }
         //stores receipt
         let receipt = []
@@ -57,11 +57,11 @@ class Store {
                 //add up the costs of all items
                totalCost += (price*currentQuantity)
                console.log(totalCost)
-                receipt.push(`${i+1}. ${currentQuantity} total ${itemName} purchased at a cost of $${(price)} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
+                receipt.push(`${i+1}. ${currentQuantity} total ${itemName} purchased at a cost of $${(Number.parseFloat(price).toFixed(2))} for a total cost of $${Number.parseFloat((price)*(currentQuantity)).toFixed(2)}.`)
                 totalItems += currentQuantity
             }
         }
-       receipt.push(`Before Taxes, the subtotal was ${Number.parseFloat(totalCost).toFixed(2)} After taxes and fees were applied, the total comes out to ${((totalCost)*(0.0875))}. Thanks for shopping!`)
+       receipt.push(`Before Taxes, the subtotal was $${Number.parseFloat(totalCost).toFixed(2)} After taxes and fees were applied, the total comes out to $${Number.parseFloat((totalCost)*(1.0875)).toFixed(2)}. Thanks for shopping!`)
         //store order info
         const createdAt = new Date().toISOString()
     
@@ -70,7 +70,7 @@ class Store {
             name:user.name,
             email:user.email,
             order:cart,
-            total:Number.parseFloat(totalCost).toFixed(2),
+            total:Number.parseFloat((totalCost)*(1.0875)).toFixed(2),
             totalItems:totalItems,
             createdAt:createdAt,
             receipt:receipt

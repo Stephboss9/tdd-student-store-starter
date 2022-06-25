@@ -37,7 +37,8 @@ app.use((req, res, next) => {
 app.use ((error, req, res, next) => {
     let status = error.status || 500
     let message = error.message ||"Something wen't wrong in the application"
-    return res.status(status).json({error:{status,message}})
+    console.log("hey", message)
+    return res.status(status).json({error:{status:status,message:message}})
 }) 
 
 
